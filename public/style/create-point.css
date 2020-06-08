@@ -1,0 +1,188 @@
+#page-create-point {
+  width: 90%;
+  max-width: 1100px;
+  /* alinhamento de caixa (pelo lado de fora) */
+  margin: 0 auto;
+}
+#page-create-point header {
+  margin-top: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#page-create-point header a {
+  color: var(--title-color);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+#page-create-point header a span {
+  margin-right: 16px;
+  background-image: url('../extras-aula-1/icones/arrow-left.svg');
+  display: flex;
+  width: 20px;
+  height: 24px;
+}
+
+form {
+  background-color: white;
+  margin: 80px auto;
+  /* padding: preenchimento interno da caixa */
+  padding: 64px;
+
+  border-radius: 8px;
+
+  max-width: 730px;
+}
+
+form h1 {
+  font-size: 36px;
+}
+
+form fieldset {
+  margin-top: 64px;
+  border: 0;
+}
+
+form legend {
+  margin-bottom: 40px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+form legend h2 {
+  font-size: 24px;
+}
+
+form legend span {
+  font-size: 14px;
+  color: var(--title-color);
+}
+
+form .field {
+  /* para os campos se esticarem por todo espaço */
+  flex: 1;
+  display: flex;
+  /* os elementos seguem o sentido das colunas */
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+form .fieldgroup {
+  display: flex;
+}
+
+form input,
+form select {
+  background-color: #f0f0f5;
+  border: 0;
+  /* padding para aumentar o espaçamento interno top-bottom e das laterais*/
+  padding: 16px 24px;
+  font-size: 16px;
+  border-radius: px;
+
+  /* outline referencia a marcacao do campo em ativacao */
+  /* outline: none; */
+}
+
+form select {
+  /* para perder a seta do campo select */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+form label {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+/* field seguido por outro field, garantir a separaçao entre eles */
+form .fieldgroup .field + .field {
+  margin-left: 24px;
+}
+
+form button {
+  width: 260px;
+  height: 56px;
+  background-color: var(--primary-color);
+
+  border-radius: 8px;
+
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+
+  border: 0;
+  margin-top: 40px;
+
+  /* para que a mudança de cor fique suave ao passar o mouse, usa=se o transition */
+  /* transition-durantion: aplica a transicao para tudo que pode ter transiçao */
+  transition: background-color 400ms;
+}
+
+/* hover: quando passar o mause em cima do botao */
+
+form button:hover {
+  background-color: #2fb86e;
+}
+
+.items-grid {
+  /* display grid é multidimensional, pode formar matrizes
+  enquato que o flex é unidimensional: ou linha ou coluna  */
+  display: grid;
+
+  /* grid-template-columns: 200px 200px 200px; */
+  grid-template-columns: 1fr 1fr 1fr;
+  /* garante o espaçamento entre os grids - gap é similar ao margin, porém só para grids*/
+  gap: 16px;
+  padding-top: 20px;
+}
+
+.items-grid li {
+  background-color: #f5f5f5;
+  list-style: none;
+  border: 2px solid #f5f5f5;
+  border-radius: 8px;
+  height: 120px;
+  width: 200px;
+  /* com 3 elemento to right-left bottom */
+  padding: 18px 8px 8px;
+
+  /* alinhando os elementos */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* fluxo padrao do flex da direira para a esquerda
+  mas como invertemos o fluxo ele arruma de cima para baixo por conta 
+  do column */
+  justify-content: space-between;
+  text-align: center;
+  /* para aparecer a maozinha toda vez que o mouse estiver sobre o elemento: cursor:pointer
+  todo elemento "a" já vem com isso por default */
+  cursor: pointer;
+}
+
+.items-grid li span {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  color: var(--title-color);
+}
+
+/* li.selected porque o selected esta dentro do li */
+.items-grid li.selected {
+  background: #e1faec;
+  border: 2px solid #34cb79;
+}
+
+.items-grid li img,
+.items-grid li span {
+  /* evitar que seja selecionados separadamente */
+  pointer-events: none;
+}

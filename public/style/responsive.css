@@ -1,0 +1,62 @@
+/* para transformar a pagina mais dinamica em termos de distribuicao das 
+frases de modo que nao se encavalem entre si */
+/* @media: conjunto de regras a serem configuradas dentro desta secao */
+/* sempre que a largura for menor do que 900px serao aplicadas essas regras */
+@media (max-width: 900px) {
+  #page-home {
+    /* some com a imagem de background */
+    background-position-x: 70vw;
+  }
+  #page-home .content {
+    /* alinha todos os textos no centro */
+    align-items: center;
+    text-align: center;
+  }
+  /* colocar o 'cadastrar um ponto de coleta' no final da página */
+  #page-home header a {
+    /* o absolute sobrepoe um sobre o outro */
+    position: absolute;
+    bottom: 15px;
+
+    left: 50%;
+    /* acha o ponto medio e faz o elemento ficar bem ao meio */
+    transform: translateX(-50%);
+  }
+
+  #page-home main {
+    align-items: center;
+  }
+  #page-search-results .cards {
+    grid-template-columns: 1fr;
+  }
+  #page-search-results .cards img {
+    height: 250px;
+  }
+  #page-create-point .fieldgroup {
+    flex-direction: column;
+  }
+
+  #page-create-point .fieldgroup .field + .field {
+    margin-left: 0;
+  }
+  #page-create-point form legend {
+    display: inline;
+  }
+  #page-create-point fieldset .items-grid {
+    grid-template-columns: none;
+  }
+}
+
+@media (min-width: 1700px) {
+  #page-home {
+    /* some com a imagem de background */
+    background-position-x: 40vw;
+  }
+}
+
+@media (max-height: 760px) {
+  #page-home {
+    /* some com a imagem de background */
+    background-position-y: 200px;
+  }
+}

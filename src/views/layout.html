@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- hypertext: hiper texto - links markup: marcacao de texto language - linguagem de marcacao de texto -->
+  <head>
+    <!-- aceita caracteres especiais na pagina -->
+    <meta charset="UTF-8"/>
+    <!-- ajusta a página para caber na tela de diversos tamanhos -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- <link rel="stylesheet" href="./style/reset.css" /> -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&family=Ubuntu:wght@700&display=swap" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="./style/main.css"/>
+    {% block styles %}{% endblock styles %}
+    <link rel="stylesheet" href="./style/responsive.css"/>
+    {% block title %}
+      {# deixaremos um valor padrao caso nao encontre nada na página que o chama #}
+      <title>Ecoleta</title>
+    {% endblock title %}
+
+  </head>
+  <body>
+    {# chamando a variavel via njk, definida na página original, 
+    caso nao tenha variavel no html que possa preenche-la, fica em branco #}
+    <div id="{{pageId}}">
+      {% block content %}{% endblock content %}
+    </div>
+    {% block modal %}{% endblock modal %}
+    {% block scripts %}{% endblock scripts %}
+  </body>
+</html>

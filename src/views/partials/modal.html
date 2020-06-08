@@ -1,0 +1,21 @@
+<!-- Código estilo modal -->
+<div id="modal" class="hide">
+  <div class="content">
+    <div class="header">
+      <h1>Pontos de coleta</h1>
+      <!-- caso queira cancelar a açao, só fechar o modal -->
+      <!-- sem o # fica havendo o reload da página -->
+      <a href="#">Fechar</a>
+    </div>
+    <!-- o action do form te leva para alguma página -->
+    <form action="/search-results">
+      <label for="search">Cidade</label>
+      <div class="search field">
+        <input type="text" id="searchCity" name="search" placeholder="Pesquise por cidade" autofocus="autofocus"/>
+        <button>
+          <img src="./extras-aula-1/icones/search.svg" alt="Buscar"/>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

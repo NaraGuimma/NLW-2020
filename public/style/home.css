@@ -1,0 +1,128 @@
+#page-home {
+  /* viewhome port height */
+  height: 120vh;
+  background: url('../extras-aula-1/icones/home-background.svg') no-repeat;
+  /* view port weight */
+  background-position: 35vw bottom;
+}
+
+/* elemento em cascata */
+#page-home .content {
+  /* com 2 atributos: top-bottom left-right
+  com 3 atributos: top left-right bottom 
+  com 4 atributos: top right bottom left */
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1100px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#page-home header {
+  margin-top: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#page-home header a {
+  display: flex;
+  color: var(--title-color);
+  font-weight: 700;
+}
+
+#page-home header a span {
+  margin-right: 16px;
+  display: flex;
+  background-image: url('../extras-aula-1/icones/log-in.svg');
+  width: 20px;
+  height: 20px;
+}
+
+/* chamando uma classe com . 
+  id com #
+*/
+
+#page-home main {
+  max-width: 560px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#page-home main h1 {
+  font-size: 54px;
+}
+
+#page-home main p {
+  font-size: 24px;
+  /* altura de linha */
+  line-height: 38px;
+  margin-top: 24px;
+}
+
+#page-home main a {
+  width: 100%;
+  max-width: 360px;
+  height: 72px;
+
+  /* so o radius é um atalho para aplicar isso a todas as bordas, faz um arredondamento
+  com 2 numeros, ele pega no sentido horario cada uma das bordas */
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+
+  margin-top: 40px;
+
+  background-color: var(--primary-color);
+  /* tempo de transicao, fica mais suave a mudança de cor no botao, proveiente do HOVER*/
+  transition: 400ms;
+  /* o strong nao requer o bold */
+  /* font-weight: bold; */
+}
+
+/* quando passar o mouse por cima do elemento, suas propriedades irao mudar 
+aplica-se uma estilizaçao especial */
+#page-home main a:hover {
+  background-color: #2fb86e;
+}
+
+#page-home main a span {
+  width: 72px;
+  height: 72px;
+
+  /* para corrigir a borda remanescente e ficar igual a borda do lado direito*/
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+
+  /* rgba=rgb alfa, que é a transparencia
+  o alfa vai de zero a 1
+  rgb de 0 a 255 */
+  background-color: rgba(0, 0, 0, 0.08);
+
+  /* para garatir que a imagem aparecerá */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* criando pseudo elementos nos span, que nao existem no 
+html mas serao criados no css*/
+
+#page-home main a span::after {
+  content: '';
+  background-image: url('../extras-aula-1/icones/search.svg');
+
+  width: 20px;
+  height: 20px;
+}
+
+#page-home main a strong {
+  /* garantir que ficara bem alinhado e distribuido por todo espaço 
+  crescer a caixa ao longo de todo o espaço disponível*/
+  flex: 1;
+  color: white;
+  text-align: center;
+}
